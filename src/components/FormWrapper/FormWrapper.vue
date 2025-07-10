@@ -1,52 +1,62 @@
 <script setup lang="ts">
 import { PlusOutlined, InfoCircleOutlined } from '@ant-design/icons-vue'
+import FormList from '../../modules/FormList/FormList.vue'
 </script>
 
 <template>
-  <div class="form-title">
-    <h1 class="form-title__text">Учетные записи</h1>
-    <a-button class="form-title__button">
-      <template #icon>
-        <PlusOutlined />
-      </template>
-    </a-button>
-  </div>
-  <div class="form-hint">
-    <InfoCircleOutlined class="form-hint__icon" />
-    <p class="form-hint__text">
-      Для указания нескольких меток для одной пары логин/пароль используйте
-      разделитель ;
-    </p>
-  </div>
+  <section class="form-wrapper">
+    <div class="form-wrapper__header">
+      <h1 class="form-wrapper__header__title">Учетные записи</h1>
+      <a-button class="form-wrapper__header__button">
+        <template #icon>
+          <PlusOutlined />
+        </template>
+      </a-button>
+    </div>
+    <div class="form-wrapper__hint">
+      <InfoCircleOutlined class="form-wrapper__hint__icon" />
+      <p class="form-wrapper__hint__text">
+        Для указания нескольких меток для одной пары логин/пароль используйте
+        разделитель ;
+      </p>
+    </div>
+    <FormList />
+  </section>
 </template>
 
 <style scoped lang="scss">
-.form-title {
+.form-wrapper {
   display: flex;
-  gap: 16px;
-  align-items: center;
-  padding: 16px 0;
+  flex-direction: column;
+  gap: 8px;
 
-  &__text {
-    font: $fontH2;
-  }
-}
+  &__header {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding: 16px 0;
 
-.form-hint {
-  display: flex;
-  align-items: center;
-  padding: 8px 10px;
-  gap: 10px;
-  background-color: $bgAccentSubdued;
-  border-radius: 6px;
-
-  &__icon {
-    color: $iconSecondary;
+    &__title {
+      font: $fontH2;
+    }
   }
 
-  &__text {
-    font: $fontP6;
-    color: $textSecondary;
+  &__hint {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    gap: 10px;
+    background-color: $bgAccentSubdued;
+    border-radius: 6px;
+
+    &__icon {
+      color: $iconSecondary;
+    }
+
+    &__text {
+      font: $fontP6;
+      color: $textSecondary;
+    }
   }
 }
 </style>

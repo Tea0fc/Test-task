@@ -10,4 +10,4 @@ interface IMark {
   text: string
 }
 
-type NoteTypes = 'local' | 'LDAP'
+export type NoteTypes = 'local' | 'LDAP'
