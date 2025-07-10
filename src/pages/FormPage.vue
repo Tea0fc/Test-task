@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Footer from '../components/Footer/Footer.vue'
-import FormWrapper from '../components/FormWrapper/FormWrapper.vue'
-import Header from '../components/Header/Header.vue'
-import NotificationList from '../components/NotificationList/NotificationList.vue'
+import Footer from '@/components/Footer/Footer.vue'
+import FormWrapper from '@/components/FormWrapper/FormWrapper.vue'
+import Header from '@/components/Header/Header.vue'
+import NotificationList from '@/components/NotificationList/NotificationList.vue'
 </script>
 
 <template>
@@ -18,7 +18,7 @@ import NotificationList from '../components/NotificationList/NotificationList.vu
 .content {
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 250px);
   width: 1280px;
 }
 </style>

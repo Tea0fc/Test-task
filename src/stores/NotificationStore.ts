@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { generateRandomNumber } from '../utils'
+import { generateRandomNumber } from '@/utils'
 
 interface IState {
   notifications: number[]
@@ -17,7 +17,9 @@ export const useNotificationStore = defineStore('notifications', {
       this.notifications.push(id)
     },
     deleteNotification(id: number) {
-      this.notifications = this.notifications.filter(item => item !== id)
+      this.notifications = this.notifications.filter(
+        (item: number) => item !== id
+      )
     }
   }
 })

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { useDataStore } from '../../stores/DataStore'
-import EmptyState from '../EmptyState/EmptyState.vue'
-import FormItem from '../FormItem/FormItem.vue'
+import { useDataStore } from '@/stores/DataStore'
+import EmptyState from '@/modules/EmptyState/EmptyState.vue'
+import FormItem from '@/modules/FormItem/FormItem.vue'
 
 const dataStore = useDataStore()
 
@@ -28,6 +28,8 @@ const subtitles = ['Метки', 'Тип записи', 'Логин', 'Паро�
   flex-direction: column;
   gap: 10px;
   padding: 32px 0 0 0;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   &__subtitles {
     display: grid;

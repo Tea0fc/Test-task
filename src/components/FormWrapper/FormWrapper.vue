@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PlusOutlined, InfoCircleOutlined } from '@ant-design/icons-vue'
-import FormList from '../../modules/FormList/FormList.vue'
-import { useDataStore } from '../../stores/DataStore'
+import FormList from '@/modules/FormList/FormList.vue'
+import { useDataStore } from '@/stores/DataStore'
 import { reactive, watch } from 'vue'
 
 const dataStore = useDataStore()
@@ -44,6 +44,8 @@ watch(dataStore, ({ isError }) => {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  height: 100%;
+  padding: 10px 0;
 
   &__header {
     display: flex;

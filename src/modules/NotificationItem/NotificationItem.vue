@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { CloseOutlined, ExclamationCircleOutlined } from '@ant-design/icons-vue'
-import { useNotificationStore } from '../../stores/NotificationStore'
+import { useNotificationStore } from '@/stores/NotificationStore'
 import { onMounted, ref } from 'vue'
 
 const { id } = defineProps<{ id: number }>()

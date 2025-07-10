@@ -35,6 +35,7 @@ import { GithubOutlined } from '@ant-design/icons-vue'
   align-items: center;
   justify-content: flex-end;
   padding: 16px 24px;
+  border-radius: 16px 16px 0 0;
 
   &__links {
     display: flex;

@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-import './style.scss'
-import App from './App.vue'
 import { Button, Input, Select } from 'ant-design-vue'
 import vueDebounce from 'vue-debounce'
+import App from '@/App.vue'
+import '@/style.scss'
 
 const pinia = createPinia()
 const app = createApp(App)

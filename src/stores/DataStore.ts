@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import type { IData } from '../types'
-import { generateRandomNumber } from '../utils'
+import type { IData } from '@/types'
+import { generateRandomNumber } from '@/utils'
 
 interface IState {
   data: IData[]
@@ -31,11 +31,14 @@ export const useDataStore = defineStore('data', {
       localStorage.setItem(localStorageName, JSON.stringify(this.data))
     },
     deleteNote(id: number) {
-      this.data = this.data.filter(item => item.id !== id)
+      this.data = this.data.filter((item: IData) => item.id !== id)
       localStorage.setItem(localStorageName, JSON.stringify(this.data))
     },
     updateNote(id: number, values: Omit<IData, 'id'>) {
-      this.data[this.data.findIndex(item => item.id === id)] = { id, ...values }
+      this.data[this.data.findIndex((item: IData) => item.id === id)] = {
+        id,
+        ...values
+      }
       localStorage.setItem(localStorageName, JSON.stringify(this.data))
     },
     setErrorState(state: boolean) {

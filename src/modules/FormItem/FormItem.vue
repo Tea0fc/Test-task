@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { watch, ref, reactive } from 'vue'
-import type { IData, IMark, NoteTypes } from '../../types'
+import type { IData, IMark, NoteTypes } from '@/types'
 import { DeleteOutlined } from '@ant-design/icons-vue'
-import { useDataStore } from '../../stores/DataStore'
+import { useDataStore } from '@/stores/DataStore'
 import { debounce } from 'vue-debounce'
-import { useNotificationStore } from '../../stores/NotificationStore'
+import { useNotificationStore } from '@/stores/NotificationStore'
 
 const { itemData } = defineProps<{ itemData: IData }>()
 const dataStore = useDataStore()

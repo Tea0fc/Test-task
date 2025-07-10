@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NotificationItem from '../../modules/NotificationItem/NotificationItem.vue'
-import { useNotificationStore } from '../../stores/NotificationStore'
+import NotificationItem from '@/modules/NotificationItem/NotificationItem.vue'
+import { useNotificationStore } from '@/stores/NotificationStore'
 
 const notificationStore = useNotificationStore()
 </script>
