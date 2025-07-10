@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import FormWrapper from '../components/FormWrapper.vue'
+import FormWrapper from '../components/FormWrapper/FormWrapper.vue'
 </script>
 
 <template>

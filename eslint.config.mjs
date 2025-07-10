@@ -15,6 +15,16 @@ export default [
   ...tsEslint.configs.strict,
   eslintConfigPrettier,
   {
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true
+      },
+      ecmaVersion: 12,
+      sourceType: 'module',
+      tsconfigRootDir: __dirname
+    }
+  },
+  {
     ignores: [
       '.next/*',
       '.husky/*',
