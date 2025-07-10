@@ -4,9 +4,11 @@ import type { IData, IMark, NoteTypes } from '../../types'
 import { DeleteOutlined } from '@ant-design/icons-vue'
 import { useDataStore } from '../../stores/DataStore'
 import { debounce } from 'vue-debounce'
+import { useNotificationStore } from '../../stores/NotificationStore'
 
 const { itemData } = defineProps<{ itemData: IData }>()
 const dataStore = useDataStore()
+const notificationStore = useNotificationStore()
 
 const marksText = itemData.marks.map(mark => mark.text)
 const marks = ref<string>(marksText.join('; '))
@@ -46,6 +48,7 @@ watch(
       }
     } else {
       dataStore.setErrorState(true)
+      notificationStore.pushNotification()
     }
 
     new Array(!!login, validatePassword).map((value, index) => {

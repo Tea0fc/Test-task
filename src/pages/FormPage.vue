@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import FormWrapper from '../components/FormWrapper/FormWrapper.vue'
+import NotificationList from '../components/NotificationList/NotificationList.vue'
 </script>
 
 <template>
   <main class="content">
     <FormWrapper />
   </main>
+  <NotificationList />
 </template>
 
 <style lang="scss" scoped>
