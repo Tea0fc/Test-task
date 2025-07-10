@@ -6,7 +6,7 @@ export interface IData {
   password: string | null
 }
 
-interface IMark {
+export interface IMark {
   text: string
 }
 

@@ -1,13 +1,28 @@
 <script setup lang="ts">
 import { PlusOutlined, InfoCircleOutlined } from '@ant-design/icons-vue'
 import FormList from '../../modules/FormList/FormList.vue'
+import { useDataStore } from '../../stores/DataStore'
+import { reactive, watch } from 'vue'
+
+const dataStore = useDataStore()
+const storeError = reactive({
+  isError: false
+})
+
+watch(dataStore, ({ isError }) => {
+  storeError.isError = isError
+})
 </script>
 
 <template>
   <section class="form-wrapper">
     <div class="form-wrapper__header">
       <h1 class="form-wrapper__header__title">Учетные записи</h1>
-      <a-button class="form-wrapper__header__button">
+      <a-button
+        class="form-wrapper__header__button"
+        @click="dataStore.createNote()"
+        :disabled="storeError.isError"
+      >
         <template #icon>
           <PlusOutlined />
         </template>

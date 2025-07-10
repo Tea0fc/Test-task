@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useDataStore } from '../../stores/DataStore'
+import EmptyState from '../EmptyState/EmptyState.vue'
 import FormItem from '../FormItem/FormItem.vue'
 
 const dataStore = useDataStore()
@@ -14,13 +15,10 @@ const subtitles = ['Метки', 'Тип записи', 'Логин', 'Паро�
         <span>{{ subtitle }}</span>
       </li>
     </ul>
-    <ul class="form-grid__list">
-      <FormItem
-        v-for="item in dataStore.data"
-        :id="item.id"
-        :type="item.type"
-      />
+    <ul v-if="dataStore.data.length > 0" class="form-grid__list">
+      <FormItem v-for="item in dataStore.data" :itemData="item" />
     </ul>
+    <EmptyState v-else />
   </div>
 </template>
 
@@ -40,6 +38,12 @@ const subtitles = ['Метки', 'Тип записи', 'Логин', 'Паро�
       font: $fontP8;
       color: $textSecondary;
     }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 </style>
