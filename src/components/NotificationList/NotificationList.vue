@@ -30,6 +30,7 @@ const notificationStore = useNotificationStore()
   bottom: 0;
   padding: 24px 0;
   gap: 4px;
+  z-index: 2;
 
   &__item {
     width: 90%;

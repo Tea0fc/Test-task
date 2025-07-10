@@ -61,11 +61,12 @@ onMounted(() => {
   flex-direction: column;
   gap: 4px;
   padding: 8px 24px 24px 16px;
-  background-color: $bgCriticalSubdued;
+  background-color: $bgCriticalSecondary;
   border-radius: 8px;
   transition: all ease 0.4s;
   animation: fadeUp 0.4s ease;
   pointer-events: all;
+  z-index: 10;
 
   &-hide {
     animation: fadeDown 0.4s ease;
